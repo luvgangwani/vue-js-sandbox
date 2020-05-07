@@ -17,6 +17,10 @@ new Vue({
         changeXY: function(e) {
             this.xVal = e.offsetX;
             this.yVal = e.offsetY;
+        },
+
+        gitHubLinkClick: function() {
+            alert("GitHub link clicked");
         }
     }
 })
