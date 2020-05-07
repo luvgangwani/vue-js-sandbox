@@ -11,6 +11,9 @@
     <div id="root">
         <h1>{{ header }}</h1>
         <p>{{ greet('evening') }}</p>
+        <a v-bind:href="gitUrl" target="_blank">GitHub URL</a><br>
+        Age: <input type="text" :value="ageValue"><br>
+        <div v-html="linkedInUrlHtml"></div> 
     </div>
 </body>
 <script src="public/app.js"></script>
