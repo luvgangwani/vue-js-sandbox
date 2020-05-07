@@ -9,11 +9,12 @@
 </head>
 <body>
     <div id="root">
-        <h1>{{ header }}</h1>
-        <p>{{ greet('evening') }}</p>
-        <a v-bind:href="gitUrl" target="_blank">GitHub URL</a><br>
-        Age: <input type="text" :value="ageValue"><br>
-        <div v-html="linkedInUrlHtml"></div> 
+        <button type="button" v-on:click="add(1)">Add a year</button>
+        <button type="button" @click="subtract(1)">Subtract a year</button>
+        <button type="button" v-on:dblclick="add(10)">Add 10 years</button>
+        <button type="button" @dblclick="subtract(10)">Subtract 10 years</button>
+        <p>My age is {{ age }}</p>
+        <div class="canvas" v-on:mousemove="changeXY">{{ xVal }}, {{ yVal }}</div> 
     </div>
 </body>
 <script src="public/app.js"></script>
