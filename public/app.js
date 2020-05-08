@@ -1,37 +1,51 @@
-const vueAppOne = new Vue({
+// any change made to a data property in a component remains local to a component, however if the data property is defined outside the component any changes made to that property would be reflected to the entire application
+
+// const data = {
+//     name: 'Test One'
+// }
+
+Vue.component('greeting', {
+    template: `
+    <p>
+    Greetings, I am a re-usable Vue Component. My name is {{ name }}
+    <br/>
+    <button type="button" v-on:click="changeName()">Change my name</button>
+    </p>
+    `,
+    data: function() {
+        return {
+            name: 'Test One'
+        };
+    },
+    methods: {
+        changeName: function() {
+            this.name = 'Test Two';
+        }
+    }
+})
+
+new Vue({
     el: '#vue-app-one',
     data: {
-       title: 'Vue App One'
+
     },
     methods: {
         
     },
     computed: {
 
-        greet: function() {
-            return `Greetings from ${this.title}`
-        }
-        
     }
 });
 
-const vueAppTwo = new Vue({
+new Vue({
     el: '#vue-app-two',
     data: {
-       title: 'Vue App Two'
+       
     },
     methods: {
-        changeTitle: function() {
-            vueAppOne.title = 'Changed title one by title two';
-        }
+        
     },
     computed: {
-
-        greet: function() {
-            return `Greetings from ${this.title}`
-        }
         
     }
 });
-
-vueAppTwo.title = "Changing title two from outside"
