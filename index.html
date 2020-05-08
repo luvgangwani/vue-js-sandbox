@@ -10,13 +10,13 @@
 <body>
     <div id="root">
         <label for="firstName">First Name</label>
-        <input type="text" v-on:keyup="logFirstName">
+        <input type="text" v-model="firstName">
         <p>{{ firstName }}</p><br>
         <label for="lastName">Last Name</label>
-        <input type="text" v-on:keyup.enter="logLastName"> <!-- Fired on pressing enter -->
+        <input type="text" v-model="lastName">
         <p>{{ lastName }}</p>
         <label for="age">Age</label>
-        <input type="text" v-on:keyup.alt.enter="logAge"> <!-- Fired on pressing alt+enter -->
+        <input type="text" v-model="age">
         <p>{{ age }}</p>
     </div>
 </body>
