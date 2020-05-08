@@ -2,8 +2,21 @@ new Vue({
     el: '#root',
     data: {
 
-        success: false,
-        error: false
+        employees: ['Test One', 'Test Two', 'Test Three'],
+        demographics: [
+            {
+                name: 'Test One',
+                age: 25
+            },
+            {
+                name: 'Test Two',
+                age: 35
+            },
+            {
+                name: 'Test Three',
+                age: 45
+            }
+        ]
        
     },
     methods: {

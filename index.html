@@ -9,18 +9,37 @@
 </head>
 <body>
     <div id="root">
-        <button type="button" v-on:click="error = !error">Toggle Error</button>
-        <button type="button" v-on:click="success = !success">Toggle Success</button>
+        <h1>For loop</h1>
 
-        <!-- v-if/v-else-if removes the element from the DOM when the condition is not satisfied -->
+        <h4>Employee List</h4>
+        <ul>
+            <li v-for="eachEmployee in employees">{{ eachEmployee }}</li>
+        </ul>
 
-        <!-- <p v-if="success">Success is true</p>
-        <p v-else-if="error">Error is true</p> -->
+        <h4>Employee Demographics</h4>
+        <ul>
+            <li v-for="(eachDemographic, index) in demographics">{{ index }} . {{ eachDemographic.name }} - {{ eachDemographic.age }}</li>
+        </ul>
 
-        <!-- v-show adds a style "display:none" to hide the element. The element is still present in the DOM -->
+        <h4>Employee Demographics - Using Div</h4>
+        <div v-for="(eachDemographic, index) in demographics">
+            <h5>{{ index }} . {{ eachDemographic.name }}</h5>
+            <p>Age - {{ eachDemographic.age }}</p>
+        </div>
 
-        <p v-show="success">Success is true</p>
-        <p v-show="error">Error is true</p>
+        <h4>Employee Demographics - Using template</h4> <!-- templates are similar to Fragments in react - the tag is not displayed -->
+        <template v-for="(eachDemographic, index) in demographics">
+            <h5>{{ index }} . {{ eachDemographic.name }}</h5>
+            <p>Age - {{ eachDemographic.age }}</p>
+        </template>
+
+        <h4>Employee Demographics - Displaying key,val pairs from the object</h4>
+        <template v-for="eachDemographic in demographics">
+            <template v-for="(val, key) in eachDemographic">
+                <div>{{ key }} - {{ val }}</div>
+                <br>
+            </template>
+        </template>
     </div>
 </body>
 <script src="public/app.js"></script>
