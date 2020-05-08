@@ -1,28 +1,27 @@
 new Vue({
     el: '#root',
     data: {
-
-        employees: ['Test One', 'Test Two', 'Test Three'],
-        demographics: [
-            {
-                name: 'Test One',
-                age: 25
-            },
-            {
-                name: 'Test Two',
-                age: 35
-            },
-            {
-                name: 'Test Three',
-                age: 45
-            }
-        ]
-       
+       health: 100,
+       ended: false
     },
     methods: {
-        // if addToA and addToB are methods, both the methods are called if either of the property value changes
+
+        punch: function() {
+
+            this.health -= 10;
+            if (this.health == 0) {
+                this.ended = true;
+            }
+
+        },
+
+        restart: function() {
+            this.health = 100;
+            this.ended = false;
+        }
+        
     },
     computed: {
-        // if addToA and addToB are computed properties, only the mehtod(s) associated to the property whose value is changed is called
+        
     }
 });

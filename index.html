@@ -9,37 +9,20 @@
 </head>
 <body>
     <div id="root">
-        <h1>For loop</h1>
+        <!-- Bag -->
+        <div v-if="ended" class="bag-burst"></div>
+        <div v-else class="bag"></div>
 
-        <h4>Employee List</h4>
-        <ul>
-            <li v-for="eachEmployee in employees">{{ eachEmployee }}</li>
-        </ul>
-
-        <h4>Employee Demographics</h4>
-        <ul>
-            <li v-for="(eachDemographic, index) in demographics">{{ index }} . {{ eachDemographic.name }} - {{ eachDemographic.age }}</li>
-        </ul>
-
-        <h4>Employee Demographics - Using Div</h4>
-        <div v-for="(eachDemographic, index) in demographics">
-            <h5>{{ index }} . {{ eachDemographic.name }}</h5>
-            <p>Age - {{ eachDemographic.age }}</p>
+        <!-- Bag Health -->
+        <div class="bag-health">
+            <div v-bind:style="{width: health + '%'}"></div>
         </div>
 
-        <h4>Employee Demographics - Using template</h4> <!-- templates are similar to Fragments in react - the tag is not displayed -->
-        <template v-for="(eachDemographic, index) in demographics">
-            <h5>{{ index }} . {{ eachDemographic.name }}</h5>
-            <p>Age - {{ eachDemographic.age }}</p>
-        </template>
-
-        <h4>Employee Demographics - Displaying key,val pairs from the object</h4>
-        <template v-for="eachDemographic in demographics">
-            <template v-for="(val, key) in eachDemographic">
-                <div>{{ key }} - {{ val }}</div>
-                <br>
-            </template>
-        </template>
+        <!-- Game Controls -->
+        <div class="game-controls">
+            <button type="button" v-on:click="punch" v-if="!ended">Punch</button>
+            <button type="button" v-on:click="restart">Restart</button>
+        </div>
     </div>
 </body>
 <script src="public/app.js"></script>
