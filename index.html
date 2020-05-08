@@ -9,12 +9,18 @@
 </head>
 <body>
     <div id="root">
-        <button type="button" v-on:click="a++">Add to A</button>
-        <button type="button" @click="b++">Add to B</button>
-        <div>A - {{ a }}</div>
-        <div>B - {{ b }}</div>
-        <div>Age + A = {{ addToA }}</div>
-        <div>Age + B = {{ addToB }}</div>
+        <h1>Example 1</h1>
+        <div v-on:click="available = !available" v-bind:class="{available: available}">
+            <span>Test</span>
+        </div>
+
+        <h1>Example 2</h1>
+        <button type="button" v-on:click="nearby = !nearby">Toggle Nearby</button>
+        <button type="button" v-on:click="available = !available">Toggle Available</button>
+        <div v-bind:class="compClasses">
+            <span>Test</span>
+        </div>
+
     </div>
 </body>
 <script src="public/app.js"></script>

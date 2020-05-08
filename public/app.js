@@ -2,9 +2,8 @@ new Vue({
     el: '#root',
     data: {
 
-        a: 0,
-        b: 0,
-        age: 20
+        available: false,
+        nearby: false
        
     },
     methods: {
@@ -13,12 +12,11 @@ new Vue({
     computed: {
         // if addToA and addToB are computed properties, only the mehtod(s) associated to the property whose value is changed is called
 
-        addToA: function () {
-            return this.age + this.a;
-        },
-
-        addToB: function () {
-            return this.age + this.b;
+        compClasses: function() {
+            return {
+                available: this.available,
+                nearby: this.nearby
+            }
         }
     }
 });
