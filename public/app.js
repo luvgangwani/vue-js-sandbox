@@ -2,8 +2,8 @@ new Vue({
     el: '#root',
     data: {
 
-        available: false,
-        nearby: false
+        success: false,
+        error: false
        
     },
     methods: {
@@ -11,12 +11,5 @@ new Vue({
     },
     computed: {
         // if addToA and addToB are computed properties, only the mehtod(s) associated to the property whose value is changed is called
-
-        compClasses: function() {
-            return {
-                available: this.available,
-                nearby: this.nearby
-            }
-        }
     }
 });

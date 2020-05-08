@@ -9,18 +9,18 @@
 </head>
 <body>
     <div id="root">
-        <h1>Example 1</h1>
-        <div v-on:click="available = !available" v-bind:class="{available: available}">
-            <span>Test</span>
-        </div>
+        <button type="button" v-on:click="error = !error">Toggle Error</button>
+        <button type="button" v-on:click="success = !success">Toggle Success</button>
 
-        <h1>Example 2</h1>
-        <button type="button" v-on:click="nearby = !nearby">Toggle Nearby</button>
-        <button type="button" v-on:click="available = !available">Toggle Available</button>
-        <div v-bind:class="compClasses">
-            <span>Test</span>
-        </div>
+        <!-- v-if/v-else-if removes the element from the DOM when the condition is not satisfied -->
 
+        <!-- <p v-if="success">Success is true</p>
+        <p v-else-if="error">Error is true</p> -->
+
+        <!-- v-show adds a style "display:none" to hide the element. The element is still present in the DOM -->
+
+        <p v-show="success">Success is true</p>
+        <p v-show="error">Error is true</p>
     </div>
 </body>
 <script src="public/app.js"></script>
