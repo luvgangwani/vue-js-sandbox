@@ -10,11 +10,11 @@
 <body>
     <div id="vue-app-one">
         <h1>Vue JS App One</h1>
-        <greeting></greeting>
-    </div>
-    <div id="vue-app-two">
-        <h1>Vue JS App Two</h1>
-        <greeting></greeting>
+        <input type="text" ref="txtFavFood">
+        <button v-on:click="submitFavouriteFood()">Submit</button>
+        <p>Your favourite food is: {{ favouriteFood }}</p>
+
+        <div ref="helloWorld">Hello World</div>
     </div>
 </body>
 <script src="public/app.js"></script>
