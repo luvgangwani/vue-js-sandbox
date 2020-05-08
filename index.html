@@ -9,15 +9,12 @@
 </head>
 <body>
     <div id="root">
-        <label for="firstName">First Name</label>
-        <input type="text" v-model="firstName">
-        <p>{{ firstName }}</p><br>
-        <label for="lastName">Last Name</label>
-        <input type="text" v-model="lastName">
-        <p>{{ lastName }}</p>
-        <label for="age">Age</label>
-        <input type="text" v-model="age">
-        <p>{{ age }}</p>
+        <button type="button" v-on:click="a++">Add to A</button>
+        <button type="button" @click="b++">Add to B</button>
+        <div>A - {{ a }}</div>
+        <div>B - {{ b }}</div>
+        <div>Age + A = {{ addToA }}</div>
+        <div>Age + B = {{ addToB }}</div>
     </div>
 </body>
 <script src="public/app.js"></script>
