@@ -8,21 +8,14 @@
     <title>Vue JS Sandbox</title>
 </head>
 <body>
-    <div id="root">
-        <!-- Bag -->
-        <div v-if="ended" class="bag-burst"></div>
-        <div v-else class="bag"></div>
-
-        <!-- Bag Health -->
-        <div class="bag-health">
-            <div v-bind:style="{width: health + '%'}"></div>
-        </div>
-
-        <!-- Game Controls -->
-        <div class="game-controls">
-            <button type="button" v-on:click="punch" v-if="!ended">Punch</button>
-            <button type="button" v-on:click="restart">Restart</button>
-        </div>
+    <div id="vue-app-one">
+        <h2>{{ title }}</h2>
+        <p>{{ greet }}</p>
+    </div>
+    <div id="vue-app-two">
+        <h2>{{ title }}</h2>
+        <p>{{ greet }}</p>
+        <button type="changeTitle" v-on:click="changeTitle()">Change App One Title</button>
     </div>
 </body>
 <script src="public/app.js"></script>

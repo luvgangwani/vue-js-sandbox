@@ -1,27 +1,37 @@
-new Vue({
-    el: '#root',
+const vueAppOne = new Vue({
+    el: '#vue-app-one',
     data: {
-       health: 100,
-       ended: false
+       title: 'Vue App One'
     },
     methods: {
-
-        punch: function() {
-
-            this.health -= 10;
-            if (this.health == 0) {
-                this.ended = true;
-            }
-
-        },
-
-        restart: function() {
-            this.health = 100;
-            this.ended = false;
-        }
         
     },
     computed: {
+
+        greet: function() {
+            return `Greetings from ${this.title}`
+        }
         
     }
 });
+
+const vueAppTwo = new Vue({
+    el: '#vue-app-two',
+    data: {
+       title: 'Vue App Two'
+    },
+    methods: {
+        changeTitle: function() {
+            vueAppOne.title = 'Changed title one by title two';
+        }
+    },
+    computed: {
+
+        greet: function() {
+            return `Greetings from ${this.title}`
+        }
+        
+    }
+});
+
+vueAppTwo.title = "Changing title two from outside"
